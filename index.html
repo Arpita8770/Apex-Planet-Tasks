@@ -1,32 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Webpage</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intermediate HTML, CSS, and JavaScript Task</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <header>
-        <h1>Welcome to My First Webpage</h1>
+    <!-- Header with Flexbox -->
+    <header class="site-header">
+        <div class="logo">ApexPlanet</div>
+        <nav class="main-nav">
+            <a href="#contact-section">Contact</a>
+            <a href="#todo-section">To-Do List</a>
+        </nav>
     </header>
 
-    <section>
-        <h2>About This Page</h2>
-        <p>This webpage was created as part of the Basics of Web Development task.</p>
+    <!-- Main content using CSS Grid -->
+    <main class="main-layout">
+        <!-- Contact Form Section -->
+        <section id="contact-section" class="card">
+            <h2>Contact Us</h2>
+            <p class="subtitle">Build and validate a contact form.</p>
 
-        <img src="https://www.tatvasoft.com/outsourcing/wp-content/uploads/2023/06/Types-of-Web-Development-for-your-Project.jpg" 
-             alt="web development image" 
-             width="400">
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name <span>*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" />
+                    <small class="error" id="name-error"></small>
+                </div>
 
-        <p>
-            Learn more about web development here: 
-            <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
-        </p>
-    </section>
+                <div class="form-group">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" />
+                    <small class="error" id="email-error"></small>
+                </div>
 
-    <button id="alertBtn">Click Me</button>
+                <div class="form-group">
+                    <label for="subject">Subject <span>*</span></label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" />
+                    <small class="error" id="subject-error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message <span>*</span></label>
+                    <textarea id="message" name="message" rows="4" placeholder="Type your message"></textarea>
+                    <small class="error" id="message-error"></small>
+                </div>
+
+                <button type="submit" class="btn-primary">Send Message</button>
+                <p id="form-success" class="success-message"></p>
+            </form>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section id="todo-section" class="card">
+            <h2>Dynamic To-Do List</h2>
+            <p class="subtitle">Add and remove tasks using JavaScript.</p>
+
+            <div class="todo-input">
+                <input
+                    type="text"
+                    id="todo-text"
+                    placeholder="Enter a new task"
+                />
+                <button id="add-todo" class="btn-secondary">Add</button>
+            </div>
+            <small class="error" id="todo-error"></small>
+
+            <ul id="todo-list" class="todo-list">
+                <!-- tasks added here dynamically -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Created for: Intermediate HTML, CSS & JavaScript Task</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
